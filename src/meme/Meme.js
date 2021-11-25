@@ -81,35 +81,35 @@ export const Meme = () => {
 
   return(
     memes.length ? 
-    <div >
-      <button onClick={generateMeme} className="btn btn-success btns">Generate</button>
-      <button  onClick={create} className="btn btn-danger btns">Create your own meme</button>
-      <button onClick={() => setMemeIndex(memeIndex + 1)} className="btn btn-info" >Skip</button>
-      <div className="input_container">
-            <div className="form-group">
-            {
-                captions.map((c, index) => (
-                <input onChange={(e) => updateCaption(e, index)} key={index} className="form-control inps" placeholder="Enter meme text" />
-                ))
-            }
-            </div>
-      </div>
-      <div className="home_page_img_gal">
-         <div className="Imgrow1">
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[0].url}  onClick={() =>setMemeIndex(0)} />{memes[0].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[1].url} onClick={() =>setMemeIndex(1)}  />{memes[1].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[2].url} onClick={() =>setMemeIndex(2)} />{memes[2].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[3].url} onClick={() =>setMemeIndex(3)} />{memes[3].id}</div>
-         </div>
-         <div className="Imgrow2">
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[4].url} onClick={() =>setMemeIndex(4)} />{memes[4].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[5].url} onClick={() =>setMemeIndex(5)} />{memes[5].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[6].url} onClick={() =>setMemeIndex(6)} />{memes[6].id}</div>
-            <div className="picsize"><img alt='meme' height="300" width="300" src={memes[7].url} onClick={() =>setMemeIndex(7)} />{memes[7].id}</div>
-         </div>
+    <div className="main">
+      <div className="scrn1btns">
         
+        <div className="createBtn">
+        <div><h1 className="title">Meme Creator</h1></div>
+          <button  onClick={create} className="btn btn-secondary btns">Create your own meme</button>
+        <div className="helpText">Click on a meme template to choose and press the button above</div>
+        
+        </div>
       </div>
-      <button className="btn btn-primary" >Shuffle</button>
+      
+      <div className="home_page_img_gal">
+      
+         <div className="j">
+            <div className="Imgrow1">
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[0].url}  onClick={() =>setMemeIndex(0)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[1].url} onClick={() =>setMemeIndex(1)}  /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[2].url} onClick={() =>setMemeIndex(2)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[3].url} onClick={() =>setMemeIndex(3)} /></div>
+            </div>
+            <div className="Imgrow2">
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[4].url} onClick={() =>setMemeIndex(4)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[5].url} onClick={() =>setMemeIndex(5)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[6].url} onClick={() =>setMemeIndex(6)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[7].url} onClick={() =>setMemeIndex(7)} /></div>
+            </div>
+         </div>
+      </div>
+      
     </div> :
     <></>
   );

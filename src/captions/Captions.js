@@ -27,32 +27,21 @@ export const Captions = (props) =>
     )
   };
 
-//   useEffect(() => {
-//     // Update the document title using the browser API
-//     console.log(captions)
-//   },[captions]);
+
 
 
     const generateMeme = () => {
         const queryParams = new URLSearchParams(window.location.search);
         const id = queryParams.get('id');
         const boxcount = queryParams.get('boxcount');
-        //const currentMeme = memes[id];
+
         const formData = new FormData();
-        //setHeaderMessage("Here's the meme you generated:")
+  
         formData.append('username', 'ardey7');
         formData.append('password', 'Ardey71999');
         formData.append('template_id', id);
         captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
-        console.log("ALIVE")
-        // var capts = document.getElementsByName("inps");
-        // console.log(capts)
-        // for(let i=0;i<capts.length;i++)
-        // {
-        //     console.log(capts[i].value)
-        //     formData.append(`boxes[${i}][text]`,capts[i].value)
-        // }
-
+        
         fetch('https://api.imgflip.com/caption_image', {
         method: 'POST',
         body: formData
@@ -88,12 +77,15 @@ export const Captions = (props) =>
         
         return(
             <div className="input_container">
-            <div className="form-group">
-            {
-                captions.map((c, index) => (
-                    <input onChange={(e) => updateCaption(e, index)} key={index} className="form-control inps" placeholder="Enter meme text" />
-                    ))
-            }
+              <div><h1 className="t2">Enter the following details to create your meme:</h1></div>
+              <div className="form-group">
+              {
+                  captions.map((c, index) => (
+                    
+                      <input onChange={(e) => updateCaption(e, index)} key={index} className="form-control inps" placeholder="Enter meme text" />
+                    
+                      ))
+              }
             </div>
             <button onClick={generateMeme} className="btn btn-success btns">Generate</button>
            

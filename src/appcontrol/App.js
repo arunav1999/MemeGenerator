@@ -9,9 +9,7 @@ import {Captions} from '../captions/Captions'
 export const App = () => {
   return (
     <div>
-      <h1>Meme Creator</h1>
-     
-      <Header headerMessage="Create your own meme"></Header>
+    
       <Switch>
         <Route exact path='/'>
           <Meme />
