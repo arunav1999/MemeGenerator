@@ -96,16 +96,16 @@ export const Meme = () => {
       
          <div className="j">
             <div className="Imgrow1">
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[0].url}  onClick={() =>setMemeIndex(0)} /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[1].url} onClick={() =>setMemeIndex(1)}  /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[2].url} onClick={() =>setMemeIndex(2)} /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[3].url} onClick={() =>setMemeIndex(3)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[0].url}  onClick={() =>setMemeIndex(0)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[1].url} onClick={() =>setMemeIndex(1)}  /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[2].url} onClick={() =>setMemeIndex(2)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[3].url} onClick={() =>setMemeIndex(3)} /></div>
             </div>
             <div className="Imgrow2">
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[4].url} onClick={() =>setMemeIndex(4)} /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[5].url} onClick={() =>setMemeIndex(5)} /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[6].url} onClick={() =>setMemeIndex(6)} /></div>
-                <div className="picsize"><img className="im" alt='meme' height="300" width="300" src={memes[7].url} onClick={() =>setMemeIndex(7)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[4].url} onClick={() =>setMemeIndex(4)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[5].url} onClick={() =>setMemeIndex(5)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[6].url} onClick={() =>setMemeIndex(6)} /></div>
+                <div className="picsize"><img className="im" alt='meme' height="200" width="200" src={memes[7].url} onClick={() =>setMemeIndex(7)} /></div>
             </div>
          </div>
       </div>
