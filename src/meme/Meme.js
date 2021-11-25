@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//import styles from './styles.module.css';
 import { useHistory } from 'react-router-dom';
 import {Captions} from '../captions/Captions'
 
@@ -11,38 +10,6 @@ export const Meme = () => {
   const [captions, setCaptions] = useState([]);
   const [currentOptions,changeOptions] = useState(0);
   const history = useHistory();
-
-  const updateCaption = (e, index) => {
-    const text = e.target.value || '';
-    setCaptions(
-      captions.map((c, i) => {
-        if(index === i) {
-          return text;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
-
-  const generateMeme = () => {
-    const currentMeme = memes[memeIndex];
-    const formData = new FormData();
-    //setHeaderMessage("Here's the meme you generated:")
-    formData.append('username', 'ardey7');
-    formData.append('password', 'Ardey71999');
-    formData.append('template_id', currentMeme.id);
-    captions.forEach((c, index) => formData.append(`boxes[${index}][text]`, c));
-
-    fetch('https://api.imgflip.com/caption_image', {
-      method: 'POST',
-      body: formData
-    }).then(res => {
-      res.json().then(res => {
-        history.push(`/generated?url=${res.data.url}`);
-      });
-    });
-  };
 
   const create = () =>
   {
@@ -57,12 +24,7 @@ export const Meme = () => {
       array[j] = temp;
     }
   };
-  const changeColor = () =>
-  {
-    var hold = document.getElementsByClassName("picsize");
-    hold[memeIndex].style.borderColor="red";
-  }
-
+  
   useEffect(() => {
     fetch('https://api.imgflip.com/get_memes').then(res => {
       res.json().then(res => {
